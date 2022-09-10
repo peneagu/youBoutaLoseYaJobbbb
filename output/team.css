@@ -1,0 +1,29 @@
+body{
+    background-color: lightblue;
+}
+
+.col{
+    padding: 50px;
+}
+
+.employee-card {
+    height: 300px; 
+    width: 25%;
+    margin-bottom: 40px; 
+    background-color: rgb(242, 242, 242); 
+}
+
+.card-header {
+    background-color: rgb(255, 184, 52); 
+    margin: 0px; 
+    padding: 10px;
+}
+
+.card-header h2, h4 {
+    color: white;
+}
+
+.card-body {
+    margin: 40px 20px 40px 20px;
+}
+
