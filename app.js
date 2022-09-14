@@ -6,6 +6,8 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const { off } = require("process");
 
+
+
 class App {
 
     constructor() {
@@ -16,13 +18,13 @@ class App {
                 type: "list",
                 message: "Enter your position",
                 name: "position",
-                choices: ["Manager", "Engineer", "Employee", "Intern", "Exit"],
+                choices: ["Manager", "Engineer", "Employee", "Intern", "Quit"],
             },
             {
                 type: "input",
                 message:  ({position}) => `${position}'s employee ID?`,
                 name: "id",
-                when: ({position}) => position != "Exit",
+                when: ({position}) => position != "Quit",
                 validate: id => {
                     if (id) {
                         return true;
@@ -60,7 +62,7 @@ class App {
                 type: "input",
                 message:  ({position}) =>  `${position}'s email?`,
                 name: "email",
-                when: (data) => data.position != "Exit",
+                when: (data) => data.position != "Quit",
                 validate: email => {
                     if (email) {
                         return true;
@@ -74,7 +76,7 @@ class App {
                 type: "input",
                 message:  ({position}) =>  `What is the ${position}'s number?`,
                 name: "number",
-                when: (data) => data.position != "Exit",
+                when: (data) => data.position != "Quit",
                 validate: email => {
                     if (email) {
                         return true;
@@ -103,22 +105,24 @@ class App {
         ];
     }
 
-    start() {
-        this.nextEmployee();
-    }
+    // start() {
+    //     this.nextEmployee();
+    // }
 
-    nextEmployee() {
-        inquirer.prompt(this.prompt).then(data => {
-            switch (data.position) {
-                case "Exit":
-                    this.renderHTML();
-                    console.log("Team Profile Generated");
-                    break; 
-            }
-        });
-    }
+    // nextEmployee() {
+    //     inquirer.prompt(this.prompt).then(data => {
+    //         switch (data.position) {
+    //             case "Quit":
+    //                 this.renderHTML();
+    //                 console.log("Team Profile Generated");
+    //                 break; 
+    //         }
+    //     });
+    // }
 
 }
+
+
 
 
 
