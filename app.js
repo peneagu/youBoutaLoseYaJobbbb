@@ -105,27 +105,22 @@ class App {
         ];
     }
 
-    // start() {
-    //     this.nextEmployee();
-    // }
+    start() {
+        this.nextEmployee();
+    }
 
-    // nextEmployee() {
-    //     inquirer.prompt(this.prompt).then(data => {
-    //         switch (data.position) {
-    //             case "Quit":
-    //                 this.renderHTML();
-    //                 console.log("Team Profile Generated");
-    //                 break; 
-    //         }
-    //     });
-    // }
+    nextEmployee() {
+        inquirer.prompt(this.prompt).then(data => {
+            switch (data.position) {
+                case "Quit":
+                    this.renderHTML();
+                    console.log("Team Profile Generated");
+                    break; 
+            }
+        });
+    }
 
 }
-
-
-
-
-
 
 const app = new App();
 app.start();
